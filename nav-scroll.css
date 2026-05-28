@@ -1,0 +1,150 @@
+/* Option B overrides — nav logo + text-focused hero */
+
+.layout-b .site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  padding: 1rem 1.5rem;
+  pointer-events: none;
+}
+
+.layout-b .nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.layout-b .nav-logo-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  pointer-events: auto;
+  margin-left: -0.5rem;
+}
+
+.layout-b .nav-logo {
+  height: 240px;
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+.layout-b .nav-logo-link .logo-white {
+  transition: opacity 0.4s ease;
+}
+
+.layout-b .nav-logo-link .logo-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.layout-b.scrolled .nav-logo-link .logo-white {
+  opacity: 0;
+}
+
+.layout-b.scrolled .nav-logo-link .logo-color {
+  opacity: 1;
+}
+
+.layout-b.scrolled .site-nav {
+  background: rgba(245, 242, 236, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.layout-b.scrolled .nav-logo {
+  height: 100px;
+}
+
+.layout-b.scrolled .nav-inner {
+  align-items: center;
+}
+
+.layout-b.scrolled .nav-links a {
+  color: var(--forest);
+}
+
+.layout-b.scrolled .nav-links a:hover {
+  color: var(--forest-dark);
+}
+
+.layout-b .nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.layout-b .nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--silver-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.layout-b .nav-links a:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Hero adjustments — no centered logo, text-driven */
+.layout-b .hero {
+  padding-top: 8rem;
+}
+
+.layout-b .hero-logo {
+  display: none;
+}
+
+.layout-b .hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.layout-b .hero .tagline {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .layout-b .nav-logo {
+    height: 160px;
+  }
+
+  .layout-b .nav-links {
+    gap: 1.25rem;
+  }
+
+  .layout-b .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .layout-b .hero {
+    padding-top: 6rem;
+  }
+
+  .layout-b .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .layout-b .hero .tagline {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout-b .hero-title {
+    font-size: 2rem;
+  }
+}

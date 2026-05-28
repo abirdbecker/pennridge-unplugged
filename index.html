@@ -11,19 +11,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="nav-scroll.css">
 </head>
-<body>
+<body class="layout-b">
+
+  <!-- ========== Nav with Logo ========== -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo-link">
+        <img src="assets/logo-white.png" alt="Pennridge Unplugged" class="nav-logo logo-white">
+        <img src="assets/logo-transparent.png" alt="" class="nav-logo logo-color" aria-hidden="true">
+      </a>
+      <div class="nav-links" style="pointer-events: auto;">
+        <a href="#about">About</a>
+        <a href="#join">Get Involved</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- ========== Hero ========== -->
   <section class="hero" id="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <img src="assets/logo.png" alt="Pennridge Unplugged" class="hero-logo">
-      <p class="tagline">Helping families reclaim childhood.</p>
-      <p class="hero-description">A community of Pennridge-area parents working together to delay smartphones, reduce screen time, and give our kids the childhood they deserve.</p>
+      <h1 class="hero-title">Pennridge Unplugged</h1>
+      <p class="hero-description">Pennridge Unplugged is a grassroots group working toward more intentional technology use at home and in school. We connect families, share resources, and advocate for common-sense approaches to screens and devices in our kids' lives.</p>
       <div class="hero-buttons">
         <a href="https://www.waituntil8th.org/" class="btn btn-primary" target="_blank" rel="noopener">Take the Wait Until 8th Pledge</a>
-        <a href="#FORM_URL" class="btn btn-outline" target="_blank" rel="noopener">Join Pennridge Unplugged</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSco2C8TH14yhEElwgprXlfHdi3L35Zm4yvlfyi1hWln4BI2OA/viewform?usp=header" class="btn btn-outline" target="_blank" rel="noopener">Join Pennridge Unplugged</a>
       </div>
     </div>
   </section>
@@ -34,23 +48,23 @@
       <h2>Why Pennridge Unplugged?</h2>
       <hr class="section-divider">
       <div class="about-text">
-        <p>Across the Pennridge area, parents are having the same conversation: <strong>smartphones and social media are hurting our kids.</strong> The research is clear &mdash; rising anxiety, depression, sleep disruption, and lost childhood experiences are all linked to early and excessive screen use.</p>
-        <p>But it's hard to go it alone. When every other kid has a smartphone, saying "not yet" feels impossible.</p>
-        <p>That's why Pennridge Unplugged exists. <strong>We're stronger together.</strong> When families in our community commit to delaying smartphones and setting healthy screen boundaries, no child has to feel like the odd one out.</p>
+        <p>The research is clear &mdash; rising anxiety, depression, sleep disruption, and lost childhood experiences are all linked to early and excessive screen use. And in classrooms, the overuse of devices is undermining focus, learning, and the teacher-student relationships our kids need.</p>
+        <p>But it's hard to push for change alone &mdash; whether that's setting boundaries at home when every other kid has a smartphone, or asking your school district to rethink how technology is used in the classroom.</p>
+        <p>That's why Pennridge Unplugged exists. <strong>We're stronger together.</strong> We're parents and community members advocating for more intentional technology use both at home and in our schools.</p>
       </div>
 
       <div class="cards">
         <div class="card">
-          <h3>Delay Together</h3>
-          <p>Join other Pennridge families in the Wait Until 8th pledge to delay smartphones until at least 8th grade.</p>
+          <h3>At Home</h3>
+          <p>Join other Pennridge families in delaying smartphones, setting healthy screen boundaries, and taking the Wait Until 8th pledge.</p>
         </div>
         <div class="card">
-          <h3>Stay Connected</h3>
-          <p>Get updates on local meetups, resources, and school-specific efforts across the Pennridge School District.</p>
+          <h3>At School</h3>
+          <p>Advocate for evidence-based technology policies to make sure kids are developing the skills they need to thrive in our rapidly evolving digital age.</p>
         </div>
         <div class="card">
-          <h3>Support Each Other</h3>
-          <p>Connect with like-minded parents in your neighborhood and your child's school.</p>
+          <h3>Together</h3>
+          <p>Connect with like-minded families, stay informed, and show up as a united voice for our kids.</p>
         </div>
       </div>
     </div>
@@ -63,7 +77,7 @@
       <hr class="section-divider section-divider-center">
       <p>Sign up to join Pennridge Unplugged and connect with families in your area. We'll keep you posted on local events, resources, and ways to make a difference in our schools and community.</p>
       <div class="cta-buttons">
-        <a href="#FORM_URL" class="btn btn-primary" target="_blank" rel="noopener">Sign Up</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSco2C8TH14yhEElwgprXlfHdi3L35Zm4yvlfyi1hWln4BI2OA/viewform?usp=header" class="btn btn-primary" target="_blank" rel="noopener">Sign Up</a>
         <a href="https://www.waituntil8th.org/" class="btn btn-outline" target="_blank" rel="noopener">Wait Until 8th Pledge</a>
       </div>
     </div>
@@ -76,6 +90,22 @@
       <p class="footer-pa">Part of the <a href="https://paunplugged.org" target="_blank" rel="noopener">PA Unplugged</a> network</p>
     </div>
   </footer>
+
+  <script>
+    const body = document.body;
+    const hero = document.querySelector('.hero');
+
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+      const scrollThreshold = heroBottom - 200;
+
+      if (window.scrollY > scrollThreshold) {
+        body.classList.add('scrolled');
+      } else {
+        body.classList.remove('scrolled');
+      }
+    });
+  </script>
 
 </body>
 </html>
