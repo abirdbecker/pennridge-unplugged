@@ -1,0 +1,237 @@
+/* Resources page — builds on styles.css + nav-scroll.css */
+
+/* Page header band (forest green), sits below the fixed compact nav */
+.page-header {
+  background: var(--forest-dark);
+  color: var(--cream);
+  padding: 9rem 1.5rem 3.5rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  color: var(--white);
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.page-header p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--silver-light);
+  font-size: 1.1rem;
+}
+
+.page-header .lineage {
+  margin-top: 1.5rem;
+  max-width: none;
+  font-size: 0.85rem;
+  color: var(--silver);
+}
+
+.page-header a {
+  color: var(--silver-light);
+  text-decoration: underline;
+  text-decoration-color: rgba(176, 184, 180, 0.45);
+  text-underline-offset: 2px;
+}
+
+.page-header a:hover {
+  color: var(--white);
+}
+
+/* Featured callout banner (e.g. the Blueprint) */
+.callout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 1.75rem;
+  background: var(--forest);
+  color: var(--cream);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2.5rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.callout:hover {
+  background: var(--forest-dark);
+  color: var(--cream);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(30, 61, 42, 0.2);
+  text-decoration: none;
+}
+
+.callout .callout-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.callout .callout-body {
+  flex: 1 1 320px;
+}
+
+.callout .callout-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--silver-light);
+  margin-bottom: 0.4rem;
+}
+
+.callout h3 {
+  color: var(--white);
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.callout p {
+  color: var(--silver-light);
+  font-size: 0.98rem;
+  margin-bottom: 0;
+}
+
+.callout .callout-cta {
+  font-weight: 600;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+/* Resource sections */
+.resource-section {
+  padding: 4.5rem 1.5rem;
+}
+
+.resource-section.alt {
+  background: var(--white);
+}
+
+.resource-section .lead {
+  max-width: 680px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Subsection (e.g. "The Research" inside Phone-Free Schools) */
+.subsection-title {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  color: var(--forest-dark);
+}
+
+/* Card grid */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Each card is a link */
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* On the white section, cards take the cream tone for contrast */
+.resource-section.alt .resource-card {
+  background: var(--cream);
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(30, 61, 42, 0.12);
+  border-color: var(--silver);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.resource-card .icon {
+  font-size: 1.75rem;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+/* Featured (highlighted) card */
+.resource-card.featured {
+  border-color: var(--forest);
+  box-shadow: 0 4px 16px rgba(45, 90, 61, 0.14);
+}
+
+.resource-card .badge {
+  align-self: flex-start;
+  background: var(--forest);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.7rem;
+}
+
+.resource-card h3 {
+  color: var(--forest);
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.resource-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.resource-card .go {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--forest);
+}
+
+.resource-card:hover .go {
+  color: var(--forest-dark);
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 7.5rem 1.25rem 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .resource-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .callout {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .callout .callout-cta {
+    white-space: normal;
+  }
+}
