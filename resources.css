@@ -236,8 +236,8 @@
   }
 }
 
-/* About page: centered column and text */
-.about-page .about-text {
+/* Centered intro text (About page, Get Involved intro) */
+.intro-centered .about-text {
   margin: 0 auto;
   text-align: center;
 }
