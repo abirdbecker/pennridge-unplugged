@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Involved — Pennridge Unplugged</title>
+  <meta name="description" content="Ways to be part of Pennridge Unplugged: join the mailing list, come to a monthly meeting or event, connect with other families, and help create change in our community.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/favicon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="nav-scroll.css">
+  <link rel="stylesheet" href="resources.css">
+  <link rel="stylesheet" href="get-involved.css">
+</head>
+<body class="layout-b scrolled">
+
+  <!-- ========== Nav with Logo ========== -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo-link">
+        <img src="assets/logo-white.png" alt="Pennridge Unplugged" class="nav-logo logo-white">
+        <img src="assets/logo-transparent.png" alt="" class="nav-logo logo-color" aria-hidden="true">
+      </a>
+      <div class="nav-links" style="pointer-events: auto;">
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="get-involved.html" aria-current="page">Get Involved</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== Page Header ========== -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Get Involved</h1>
+    </div>
+  </header>
+
+  <!-- ========== Intro ========== -->
+  <section class="resource-section alt">
+    <div class="container">
+      <div class="about-text">
+        <p>Pennridge Unplugged is a community effort, and there are lots of ways to be part of it. Stay informed, connect with other families, share your perspective, or help create change in our community.</p>
+        <p>Our advocacy and relationship-building are focused on Pennridge schools, and we welcome anyone who lives within the district to join our meetings, mailing list, and events. We hope this can be a space to connect, learn, share ideas, and contribute to a more intentional technology culture in our community. There's a place for everyone in this conversation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Be Informed ========== -->
+  <section class="resource-section involve" id="be-informed">
+    <div class="container">
+      <h2>Be Informed</h2>
+      <hr class="section-divider">
+      <p class="lead">Stay connected to what's happening in Pennridge and beyond.</p>
+      <ul class="involve-list">
+        <li>Join our mailing list for news, resources, upcoming events, and ways to participate.</li>
+        <li>Attend an <a href="index.html#events">upcoming community event</a> or conversation.</li>
+        <li>Come to one of our monthly meetings, held on the third Thursday of the month from 6:30 to 8 PM, to learn more about what we're working on.</li>
+        <li>Follow along as we share ideas and opportunities for more intentional technology use at home, at school, and in our community.</li>
+      </ul>
+
+      <!-- Adds a supporter to Pennridge Unplugged on Four Norms via /api/join (site.js). -->
+      <div class="signup-block" id="signup">
+        <h3>Sign up for our mailing list and receive event and meeting info</h3>
+
+        <form class="signup-form" id="signup-form">
+          <div class="signup-row">
+            <div>
+              <label class="sr-only" for="first_name">First name</label>
+              <input id="first_name" name="first_name" required autocomplete="given-name" placeholder="First name">
+            </div>
+            <div>
+              <label class="sr-only" for="last_name">Last name</label>
+              <input id="last_name" name="last_name" required autocomplete="family-name" placeholder="Last name">
+            </div>
+          </div>
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="Email address">
+          <label class="sr-only" for="zip">ZIP code</label>
+          <input id="zip" name="zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="ZIP code">
+          <div class="signup-hp" aria-hidden="true">
+            <label for="company">Company</label>
+            <input id="company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <p class="signup-error" role="alert" hidden></p>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+
+        <div class="signup-success" id="signup-success" tabindex="-1" hidden>
+          <h3>You're on the list.</h3>
+          <p></p>
+        </div>
+
+        <p class="signup-member">Want to help lead the work? <a href="https://www.fournorms.com/pa-unplugged/pennridge-unplugged" target="_blank" rel="noopener">Become a member on Four Norms</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Be Involved ========== -->
+  <section class="resource-section alt involve" id="be-involved">
+    <div class="container">
+      <h2>Be Involved</h2>
+      <hr class="section-divider">
+      <p class="lead">Connect with other families and add your voice to the conversation.</p>
+      <ul class="involve-list">
+        <li>Take the <a href="https://survey.paunplugged.org" target="_blank" rel="noopener">PA Unplugged parent survey</a> and contribute to statewide data about families' experiences with technology in schools.</li>
+        <li>Connect with other families at your elementary school, commit to delaying smartphones and social media until after 8th grade with the <a href="https://www.waituntil8th.org/" target="_blank" rel="noopener">Wait Until 8th pledge</a>, and find local support along the way.</li>
+        <li><a href="mailto:info@pennridgeunplugged.org">Talk with us</a> about what you're seeing in your family, school, or community, and what you'd like to see change.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== Take Action ========== -->
+  <section class="resource-section involve" id="take-action">
+    <div class="container">
+      <h2>Take Action</h2>
+      <hr class="section-divider">
+      <p class="lead">Help create a community where kids have more opportunities for connection, independence, play, and life beyond screens.</p>
+      <p class="involve-intro">There are many ways to take action, and we're always looking for people with ideas, connections, and energy to contribute. You might:</p>
+      <ul class="involve-list">
+        <li><strong>Build community:</strong> Help organize an event, conversation, or family activity; bring Pennridge Unplugged to your school, neighborhood, or community group; or help connect families with phone-free and low-tech opportunities.</li>
+        <li><strong>Partner locally:</strong> Work with schools, organizations, and businesses to create spaces and practices that support intentional technology use.</li>
+        <li><strong>Speak up:</strong> Attend school board meetings and share your perspective through public comment, connect with school and district leaders, or advocate at the county and state levels for policies that support healthy technology use and children's well-being.</li>
+        <li><strong>Contribute your skills:</strong> Share information and resources, make connections, or bring your ideas and experience to a project that interests you.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== Contact ========== -->
+  <section class="resource-section alt involve involve-contact" id="contact">
+    <div class="container">
+      <h2>Want to find your place?</h2>
+      <hr class="section-divider">
+      <p class="lead">Reach out to us. Tell us what you're interested in, what questions you have, or what you'd like to help with. We'd love to talk about ways to plug you into what's already happening, or work together to create something new.</p>
+      <a href="mailto:info@pennridgeunplugged.org" class="btn btn-primary">Contact Us</a>
+      <p class="involve-email">Email us at <a href="mailto:info@pennridgeunplugged.org">info@pennridgeunplugged.org</a></p>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-contact"><a href="mailto:info@pennridgeunplugged.org">info@pennridgeunplugged.org</a></p>
+      <p class="footer-parent">A <a href="https://bucksunplugged.org" target="_blank" rel="noopener">Bucks Unplugged</a> community initiative</p>
+      <p class="footer-pa">Part of the <a href="https://paunplugged.org" target="_blank" rel="noopener">PA Unplugged</a> network</p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+
+</body>
+</html>

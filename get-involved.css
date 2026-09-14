@@ -1,0 +1,73 @@
+/* Get Involved page — builds on styles.css + nav-scroll.css + resources.css */
+
+.involve .lead {
+  margin-bottom: 1.5rem;
+}
+
+.involve-intro,
+.involve-list {
+  max-width: 680px;
+  font-size: 1.05rem;
+}
+
+.involve-list {
+  margin: 0 0 0 1.25rem;
+}
+
+.involve-list li {
+  padding-left: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.involve-list li:last-child {
+  margin-bottom: 0;
+}
+
+.involve-list li::marker {
+  color: var(--forest);
+}
+
+.involve-list strong {
+  color: var(--forest-dark);
+}
+
+/* Mailing list sign-up card */
+.signup-block {
+  max-width: 520px;
+  margin-top: 2.5rem;
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 10px;
+  padding: 1.75rem;
+}
+
+.signup-block > h3 {
+  color: var(--forest);
+  font-size: 1.3rem;
+}
+
+.signup-block .signup-form,
+.signup-block .signup-success {
+  max-width: none;
+  margin: 1.25rem 0 1rem;
+}
+
+.signup-block .signup-success {
+  background: var(--cream);
+}
+
+/* Contact */
+.involve-contact .btn {
+  margin-bottom: 1rem;
+}
+
+.involve-email {
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .signup-block {
+    padding: 1.25rem;
+  }
+}

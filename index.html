@@ -27,9 +27,9 @@
         <img src="assets/logo-transparent.png" alt="" class="nav-logo logo-color" aria-hidden="true">
       </a>
       <div class="nav-links" style="pointer-events: auto;">
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
         <a href="resources.html">Resources</a>
-        <a href="#join">Get Involved</a>
+        <a href="get-involved.html">Get Involved</a>
       </div>
     </div>
   </nav>
@@ -42,7 +42,7 @@
       <p class="hero-description">Pennridge Unplugged is a grassroots group working toward more intentional technology use at home and in school. We connect families, share resources, and advocate for common-sense approaches to screens and devices in our kids' lives.</p>
       <div class="hero-buttons">
         <a href="https://www.waituntil8th.org/" class="btn btn-primary" target="_blank" rel="noopener">Take the Wait Until 8th Pledge</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSco2C8TH14yhEElwgprXlfHdi3L35Zm4yvlfyi1hWln4BI2OA/viewform?usp=header" class="btn btn-outline" target="_blank" rel="noopener">Join Pennridge Unplugged</a>
+        <a href="get-involved.html#signup" class="btn btn-outline">Join Pennridge Unplugged</a>
       </div>
     </div>
   </section>
@@ -61,15 +61,18 @@
       <div class="cards">
         <div class="card">
           <h3>At Home</h3>
-          <p>Join other Pennridge families in delaying smartphones, setting healthy screen boundaries, and taking the Wait Until 8th pledge.</p>
+          <p class="card-lead">Support families in creating a more balanced, connected childhood in a digital world.</p>
+          <p>We bring families together to share experiences, practical resources, and ideas for navigating technology at home. That can mean delaying smartphones and social media, modeling healthier digital habits, and creating more opportunities for kids to build independence, develop real-world skills, and simply play.</p>
         </div>
         <div class="card">
           <h3>At School</h3>
-          <p>Advocate for evidence-based technology policies to make sure kids are developing the skills they need to thrive in our rapidly evolving digital age.</p>
+          <p class="card-lead">Shape thoughtful technology policies through informed, constructive dialogue.</p>
+          <p>Partner with families, educators, and school leaders to support evidence-based, developmentally appropriate technology policies. We help bring research, family perspectives, and open conversation into decisions about how technology is used in our schools, with students' learning, well-being, and relationships at the center.</p>
         </div>
         <div class="card">
           <h3>Together</h3>
-          <p>Connect with like-minded families, stay informed, and show up as a united voice for our kids.</p>
+          <p class="card-lead">Create more opportunities for kids, families, and neighbors to connect, learn, and belong.</p>
+          <p>Work with schools, community organizations, and businesses to strengthen real-world connection and intentional technology use. Through phone-free spaces, community book clubs, conversations, and shared learning, we can make it easier for families to engage with one another and build a more connected community.</p>
         </div>
       </div>
     </div>
@@ -82,15 +85,26 @@
       <hr class="section-divider section-divider-center">
       <p>Sign up to join Pennridge Unplugged and connect with families in your area. We'll keep you posted on local events, resources, and ways to make a difference in our schools and community.</p>
       <div class="cta-buttons">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSco2C8TH14yhEElwgprXlfHdi3L35Zm4yvlfyi1hWln4BI2OA/viewform?usp=header" class="btn btn-primary" target="_blank" rel="noopener">Sign Up</a>
-        <a href="https://www.waituntil8th.org/" class="btn btn-outline" target="_blank" rel="noopener">Wait Until 8th Pledge</a>
+        <a href="get-involved.html#signup" class="btn btn-primary">Sign Up</a>
+        <a href="get-involved.html" class="btn btn-outline">Ways to Get Involved</a>
+        <a href="mailto:info@pennridgeunplugged.org" class="btn btn-outline">Contact Us</a>
       </div>
+    </div>
+  </section>
+
+  <!-- ========== Upcoming Events (filled from Four Norms by site.js) ========== -->
+  <section class="events" id="events" hidden>
+    <div class="container">
+      <h2>Upcoming Events</h2>
+      <hr class="section-divider">
+      <div class="event-list" id="event-list"></div>
     </div>
   </section>
 
   <!-- ========== Footer ========== -->
   <footer class="site-footer">
     <div class="container">
+      <p class="footer-contact"><a href="mailto:info@pennridgeunplugged.org">info@pennridgeunplugged.org</a></p>
       <p class="footer-parent">A <a href="https://bucksunplugged.org" target="_blank" rel="noopener">Bucks Unplugged</a> community initiative</p>
       <p class="footer-pa">Part of the <a href="https://paunplugged.org" target="_blank" rel="noopener">PA Unplugged</a> network</p>
     </div>
@@ -111,6 +125,7 @@
       }
     });
   </script>
+  <script src="site.js"></script>
 
 </body>
 </html>
