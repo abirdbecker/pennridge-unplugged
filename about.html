@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Pennridge Unplugged</title>
+  <title data-i18n="title.about">About — Pennridge Unplugged</title>
   <meta name="description" content="Pennridge Unplugged is a group of parents, educators, mental health professionals, and community members helping kids, families, and schools navigate a rapidly changing digital world.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,9 +28,10 @@
         <img src="assets/logo-transparent.png" alt="" class="nav-logo logo-color" aria-hidden="true">
       </a>
       <div class="nav-links" style="pointer-events: auto;">
-        <a href="about.html" aria-current="page">About</a>
-        <a href="resources.html">Resources</a>
-        <a href="get-involved.html">Get Involved</a>
+        <a href="about.html" aria-current="page" data-i18n="nav.about">About</a>
+        <a href="resources.html" data-i18n="nav.resources">Resources</a>
+        <a href="get-involved.html" data-i18n="nav.involved">Get Involved</a>
+        <button type="button" class="lang-toggle" data-lang-toggle lang="es">Español</button>
       </div>
     </div>
   </nav>
@@ -38,18 +39,18 @@
   <!-- ========== Page Header ========== -->
   <header class="page-header">
     <div class="container">
-      <h1>About Us</h1>
+      <h1 data-i18n="about.title">About Us</h1>
     </div>
   </header>
 
   <!-- ========== About ========== -->
-  <section class="resource-section alt">
+  <section class="resource-section alt about-page">
     <div class="container">
       <div class="about-text">
-        <p>Pennridge Unplugged is a group of parents, educators, mental health professionals, and concerned community members who bring varied backgrounds and experience to this work. We aren't anti-technology. We're tech intentional. We share a desire to help kids, families, and schools navigate a rapidly changing digital world.</p>
-        <p>We know families and schools already have a lot on their plates. By creating shared norms, thoughtful policies, and practical solutions, we can make technology easier to navigate and reduce the energy spent managing distractions and enforcing boundaries, giving time and attention back to what matters most: connection, play, learning, and life offline. For schools, that means more space for teachers to teach, students to learn, and administrators to focus on education.</p>
-        <p>Now is an important time to be part of these conversations. As questions about AI, educational technology (EdTech), and phone-free schools are being debated locally, statewide, and nationally, we're creating a space for connection and constructive dialogue here in Pennridge. We advocate for thoughtful approaches, bring people and perspectives together, and aim to serve as a trusted resource and advisory voice for our schools and broader community.</p>
-        <p>Want to learn more? Email us at <a href="mailto:info@pennridgeunplugged.org">info@pennridgeunplugged.org</a>.</p>
+        <p data-i18n="about.p1">Pennridge Unplugged is a group of parents, educators, mental health professionals, and concerned community members who bring varied backgrounds and experience to this work. We aren't anti-technology. We're tech intentional. We share a desire to help kids, families, and schools navigate a rapidly changing digital world.</p>
+        <p data-i18n="about.p2">We know families and schools already have a lot on their plates. By creating shared norms, thoughtful policies, and practical solutions, we can make technology easier to navigate and reduce the energy spent managing distractions and enforcing boundaries, giving time and attention back to what matters most: connection, play, learning, and life offline. For schools, that means more space for teachers to teach, students to learn, and administrators to focus on education.</p>
+        <p data-i18n="about.p3">Now is an important time to be part of these conversations. As questions about AI, educational technology (EdTech), and phone-free schools are being debated locally, statewide, and nationally, we're creating a space for connection and constructive dialogue here in Pennridge. We advocate for thoughtful approaches, bring people and perspectives together, and aim to serve as a trusted resource and advisory voice for our schools and broader community.</p>
+        <p data-i18n="about.p4">Want to learn more? Email us at <a href="mailto:info@pennridgeunplugged.org">info@pennridgeunplugged.org</a>.</p>
       </div>
     </div>
   </section>
@@ -58,10 +59,12 @@
   <footer class="site-footer">
     <div class="container">
       <p class="footer-contact"><a href="mailto:info@pennridgeunplugged.org">info@pennridgeunplugged.org</a></p>
-      <p class="footer-parent">A <a href="https://bucksunplugged.org" target="_blank" rel="noopener">Bucks Unplugged</a> community initiative</p>
-      <p class="footer-pa">Part of the <a href="https://paunplugged.org" target="_blank" rel="noopener">PA Unplugged</a> network</p>
+      <p class="footer-parent" data-i18n="footer.parent">A <a href="https://bucksunplugged.org" target="_blank" rel="noopener">Bucks Unplugged</a> community initiative</p>
+      <p class="footer-pa" data-i18n="footer.pa">Part of the <a href="https://paunplugged.org" target="_blank" rel="noopener">PA Unplugged</a> network</p>
     </div>
   </footer>
+
+  <script src="i18n.js"></script>
 
 </body>
 </html>

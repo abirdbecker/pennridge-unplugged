@@ -2,12 +2,20 @@
 // Four Norms doesn't send CORS headers, so the browser can't call it directly;
 // this reads the public group feed and trims it to what the page renders.
 // Four Norms is the source of truth: new events appear within the hour.
+//
+// ?lang=es formats dates and labels in Spanish. Titles and descriptions are
+// passed through as written on Four Norms (English).
 
 const FEED = 'https://www.fournorms.com/api/v1/groups/pennridge-unplugged/events.json?limit=100';
 const TIME_ZONE = 'America/New_York';
 const EXCERPT_LENGTH = 240;
+const LOCALES = { en: 'en-US', es: 'es-US' };
+const ONLINE = { en: 'Online', es: 'En línea' };
 
 module.exports = async (req, res) => {
+  const lang = req.query && req.query.lang === 'es' ? 'es' : 'en';
+  const locale = LOCALES[lang];
+
   let events;
   try {
     const upstream = await fetch(FEED);
@@ -29,10 +37,10 @@ module.exports = async (req, res) => {
       const start = new Date(e.start_time);
       return {
         title: e.title.trim(),
-        month: format(start, { month: 'short' }),
-        day: format(start, { day: 'numeric' }),
-        when: formatWhen(start, e.end_time ? new Date(e.end_time) : null),
-        where: formatWhere(e),
+        month: format(locale, start, { month: 'short' }).replace('.', ''),
+        day: format(locale, start, { day: 'numeric' }),
+        when: formatWhen(locale, start, e.end_time ? new Date(e.end_time) : null),
+        where: e.virtual ? ONLINE[lang] : formatWhere(e),
         excerpt: excerpt(e.description),
         image: e.cover_image_url || null,
         url: e.links.web_url,
@@ -43,23 +51,36 @@ module.exports = async (req, res) => {
   res.status(200).json({ events: upcoming });
 };
 
-function format(date, options) {
-  return new Intl.DateTimeFormat('en-US', { timeZone: TIME_ZONE, ...options }).format(date);
+function format(locale, date, options) {
+  return new Intl.DateTimeFormat(locale, { timeZone: TIME_ZONE, ...options }).format(date);
 }
 
-// "Thursday, September 17 · 6:30–8:00 PM"
-function formatWhen(start, end) {
-  const date = format(start, { weekday: 'long', month: 'long', day: 'numeric' });
-  const time = { hour: 'numeric', minute: '2-digit' };
-  let from = format(start, time);
-  if (!end) return `${date} · ${from}`;
-  const to = format(end, time);
-  if (from.slice(-2) === to.slice(-2)) from = from.slice(0, -3);
-  return `${date} · ${from}–${to}`;
+// Clock time and AM/PM marker separately, so a shared marker can be dropped
+// from the start time ("6:30–8:00 PM", "6:30–8:00 p.m.").
+function timeParts(locale, date) {
+  const parts = new Intl.DateTimeFormat(locale, {
+    timeZone: TIME_ZONE,
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  }).formatToParts(date);
+  const period = (parts.find((p) => p.type === 'dayPeriod') || {}).value || '';
+  const clock = parts.filter((p) => p.type !== 'dayPeriod').map((p) => p.value).join('').trim();
+  return { clock, period };
+}
+
+// "Thursday, September 17 · 6:30–8:00 PM" / "Jueves, 17 de septiembre · 6:30–8:00 p.m."
+function formatWhen(locale, start, end) {
+  let date = format(locale, start, { weekday: 'long', month: 'long', day: 'numeric' });
+  date = date.charAt(0).toUpperCase() + date.slice(1);
+  const from = timeParts(locale, start);
+  if (!end) return `${date} · ${from.clock} ${from.period}`;
+  const to = timeParts(locale, end);
+  const fromText = from.period === to.period ? from.clock : `${from.clock} ${from.period}`;
+  return `${date} · ${fromText}–${to.clock} ${to.period}`;
 }
 
 function formatWhere(e) {
-  if (e.virtual) return 'Online';
   const name = (e.location && e.location.name || '').trim();
   const city = (e.location && e.location.city || '').trim();
   if (name && city && !name.includes(city)) return `${name}, ${city}`;

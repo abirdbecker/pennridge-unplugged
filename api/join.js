@@ -2,18 +2,40 @@
 // owns the record; this is only the form handler. The API key stays server-side
 // (FOUR_NORMS_API_KEY in Vercel, the same org key paunplugged.org uses).
 // Supporters get updates; full membership needs a Four Norms account, which the
-// page links to separately.
+// page links to separately. Error messages follow the page language (lang: "es").
 
 const SUPPORTERS = 'https://www.fournorms.com/api/v1/groups/pennridge-unplugged/supporters.json';
 
-module.exports = async (req, res) => {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).json({ ok: false, error: 'Method not allowed.' });
-  }
+const MESSAGES = {
+  en: {
+    method: 'Method not allowed.',
+    missing: 'Please fill in every field.',
+    email: 'Please enter a valid email address.',
+    zip: 'Please enter a 5-digit ZIP code.',
+    unavailable: 'Sign-ups are unavailable right now.',
+    failed: "We couldn't complete your sign-up. Please try again.",
+    unreachable: "We couldn't reach Four Norms. Please try again.",
+  },
+  es: {
+    method: 'Método no permitido.',
+    missing: 'Por favor, complete todos los campos.',
+    email: 'Ingrese un correo electrónico válido.',
+    zip: 'Ingrese un código postal de 5 dígitos.',
+    unavailable: 'Las inscripciones no están disponibles en este momento.',
+    failed: 'No pudimos completar su inscripción. Inténtelo de nuevo.',
+    unreachable: 'No pudimos conectar con Four Norms. Inténtelo de nuevo.',
+  },
+};
 
+module.exports = async (req, res) => {
   const body = req.body && typeof req.body === 'object' ? req.body : {};
   const field = (key) => (typeof body[key] === 'string' ? body[key].trim() : '');
+  const msg = MESSAGES[field('lang') === 'es' ? 'es' : 'en'];
+
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST');
+    return res.status(405).json({ ok: false, error: msg.method });
+  }
 
   // Hidden honeypot field: people never see it, bots fill it in. Pretend success.
   if (field('company')) return res.status(200).json({ ok: true });
@@ -24,19 +46,19 @@ module.exports = async (req, res) => {
   const zip = field('zip');
 
   if (!firstName || !lastName || !email || !zip) {
-    return res.status(400).json({ ok: false, error: 'Please fill in every field.' });
+    return res.status(400).json({ ok: false, error: msg.missing });
   }
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-    return res.status(400).json({ ok: false, error: 'Please enter a valid email address.' });
+    return res.status(400).json({ ok: false, error: msg.email });
   }
   if (!/^\d{5}$/.test(zip)) {
-    return res.status(400).json({ ok: false, error: 'Please enter a 5-digit ZIP code.' });
+    return res.status(400).json({ ok: false, error: msg.zip });
   }
 
   const key = process.env.FOUR_NORMS_API_KEY;
   if (!key) {
     console.error('FOUR_NORMS_API_KEY is not set');
-    return res.status(503).json({ ok: false, error: 'Sign-ups are unavailable right now.' });
+    return res.status(503).json({ ok: false, error: msg.unavailable });
   }
 
   try {
@@ -60,11 +82,11 @@ module.exports = async (req, res) => {
         return res.status(200).json({ ok: true, already: true });
       }
       console.error(`Four Norms supporter POST ${upstream.status}: ${text.slice(0, 300)}`);
-      return res.status(502).json({ ok: false, error: "We couldn't complete your sign-up. Please try again." });
+      return res.status(502).json({ ok: false, error: msg.failed });
     }
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('Four Norms supporter POST failed:', err);
-    return res.status(502).json({ ok: false, error: "We couldn't reach Four Norms. Please try again." });
+    return res.status(502).json({ ok: false, error: msg.unreachable });
   }
 };

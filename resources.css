@@ -235,3 +235,9 @@
     white-space: normal;
   }
 }
+
+/* About page: centered column and text */
+.about-page .about-text {
+  margin: 0 auto;
+  text-align: center;
+}

@@ -584,3 +584,18 @@ p {
     width: 180px;
   }
 }
+
+/* --- Language toggle helpers (i18n.js) --- */
+.lang-es-only {
+  display: none;
+}
+
+html[lang="es"] .lang-es-only {
+  display: block;
+}
+
+.events-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: -1rem;
+}
