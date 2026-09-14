@@ -81,6 +81,16 @@
     return node;
   }
 
+  // Stands in for a missing cover image so cards in the grid line up.
+  function placeholder() {
+    const box = el('div', 'event-img-placeholder');
+    const logo = el('img');
+    logo.src = 'assets/logo-transparent.png';
+    logo.alt = '';
+    box.append(logo);
+    return box;
+  }
+
   function renderEvent(event) {
     const card = el('article', 'event');
 
@@ -89,8 +99,10 @@
       img.src = event.image;
       img.alt = '';
       img.loading = 'lazy';
-      img.addEventListener('error', () => img.remove());
+      img.addEventListener('error', () => img.replaceWith(placeholder()));
       card.append(img);
+    } else {
+      card.append(placeholder());
     }
 
     const date = el('div', 'event-date');

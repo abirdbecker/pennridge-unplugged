@@ -358,30 +358,59 @@ p {
 }
 
 .event-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
 .event {
+  display: flex;
+  flex-direction: column;
   background: var(--cream);
   border: 1px solid var(--cream-dark);
-  border-left: 4px solid var(--forest);
+  border-top: 4px solid var(--forest);
   border-radius: 10px;
   overflow: hidden;
 }
 
-.event-img {
+.event-img,
+.event-img-placeholder {
   width: 100%;
   aspect-ratio: 16 / 5;
+}
+
+.event-img {
   object-fit: cover;
 }
 
+/* Events without a Four Norms cover image get the logo, so cards line up. */
+.event-img-placeholder {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+
+/* Absolutely positioned so the logo's own size can't stretch the 16:5 band. */
+.event-img-placeholder img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  height: 75%;
+  width: auto;
+}
+
 .event-body {
+  flex: 1;
   display: flex;
   align-items: flex-start;
   gap: 1.25rem;
   padding: 1.5rem 1.75rem;
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
 }
 
 .event-date {
@@ -428,11 +457,16 @@ p {
 .event-details .event-excerpt {
   margin-top: 0.6rem;
   line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
 .event-link {
-  display: inline-block;
-  margin-top: 0.6rem;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 0.6rem;
   font-weight: 600;
   text-decoration: none;
 }
@@ -519,6 +553,10 @@ p {
 
   .about, .cta, .events {
     padding: 3.5rem 1.25rem;
+  }
+
+  .event-list {
+    grid-template-columns: 1fr;
   }
 
   .event-body {
