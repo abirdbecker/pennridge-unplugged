@@ -45,6 +45,7 @@
     // ---------- About ----------
     'title.about': 'Acerca de | Pennridge Unplugged',
     'about.title': 'Quiénes somos',
+    'about.subtitle': 'Padres, educadores y vecinos que trabajan por una cultura tecnológica más intencional en Pennridge.',
     'about.p1': 'Pennridge Unplugged es un grupo de padres, educadores, profesionales de la salud mental y miembros de la comunidad que aportan diversas trayectorias y experiencias a este trabajo. No estamos en contra de la tecnología. Buscamos usarla con intención. Compartimos el deseo de ayudar a los niños, las familias y las escuelas a navegar un mundo digital que cambia rápidamente.',
     'about.p2': 'Sabemos que las familias y las escuelas ya tienen mucho que atender. Al crear normas compartidas, políticas bien pensadas y soluciones prácticas, podemos hacer que la tecnología sea más fácil de manejar y reducir la energía que se gasta en controlar distracciones y hacer cumplir límites, devolviendo tiempo y atención a lo que más importa: la conexión, el juego, el aprendizaje y la vida fuera de las pantallas. Para las escuelas, eso significa más espacio para que los maestros enseñen, los estudiantes aprendan y los administradores se enfoquen en la educación.',
     'about.p3': 'Este es un momento importante para ser parte de estas conversaciones. Mientras se debaten a nivel local, estatal y nacional preguntas sobre la inteligencia artificial (IA), la tecnología educativa (EdTech) y las escuelas libres de teléfonos, estamos creando un espacio de conexión y diálogo constructivo aquí en Pennridge. Abogamos por enfoques bien pensados, reunimos a personas y perspectivas diversas, y buscamos ser un recurso confiable y una voz asesora para nuestras escuelas y toda la comunidad.',
@@ -53,6 +54,7 @@
     // ---------- Get Involved ----------
     'title.involved': 'Participe | Pennridge Unplugged',
     'involved.title': 'Participe',
+    'involved.subtitle': 'Hay muchas formas de ser parte de Pennridge Unplugged, y en esta conversación hay lugar para todos.',
     'involved.intro1': 'Pennridge Unplugged es un esfuerzo comunitario, y hay muchas formas de ser parte de él. Manténgase informado, conecte con otras familias, comparta su perspectiva o ayude a impulsar cambios en nuestra comunidad.',
     'involved.intro2': 'Nuestra labor de defensa y de construcción de relaciones se enfoca en las escuelas de Pennridge, y damos la bienvenida a cualquier persona que viva dentro del distrito a nuestras reuniones, nuestra lista de correo y nuestros eventos. Esperamos que este sea un espacio para conectar, aprender, compartir ideas y contribuir a una cultura tecnológica más intencional en nuestra comunidad. En esta conversación hay lugar para todos.',
     'informed.title': 'Manténgase informado',
