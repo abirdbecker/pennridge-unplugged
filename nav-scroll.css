@@ -204,3 +204,18 @@
     padding: 0.15rem 0.6rem;
   }
 }
+
+/* Narrow screens: let nav items wrap beside the logo instead of overflowing. */
+@media (max-width: 600px) {
+  .layout-b .nav-inner {
+    gap: 0.75rem;
+  }
+
+  .layout-b .nav-links {
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    column-gap: 0.9rem;
+    row-gap: 0.35rem;
+  }
+}

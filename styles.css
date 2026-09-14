@@ -355,6 +355,8 @@ p {
 .events {
   background-color: var(--white);
   padding: 5rem 1.5rem;
+  /* Clears the fixed nav when jumped to via the Events link. */
+  scroll-margin-top: 110px;
 }
 
 .event-list {
