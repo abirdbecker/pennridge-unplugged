@@ -130,8 +130,10 @@
   margin-bottom: 1.5rem;
 }
 
-/* Be Informed: list beside the sign-up card */
-.informed-grid {
+/* Be Informed: list beside the join card. Be Involved: network pitch beside
+   the Four Norms sign-up form. */
+.informed-grid,
+.network-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
   gap: 2.5rem;
@@ -202,6 +204,31 @@
 
 .signup-member {
   margin-bottom: 0;
+}
+
+.join-card p {
+  color: var(--text-muted);
+}
+
+.join-card .btn {
+  margin-top: 0.25rem;
+}
+
+.join-card .join-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+}
+
+.network-grid {
+  margin-bottom: 3rem;
+}
+
+.network-text h3 {
+  font-size: 1.5rem;
+}
+
+.network-text .check-list {
+  margin-top: 1.25rem;
 }
 
 /* Idea cards (Be Involved, Take Action) */
@@ -284,7 +311,8 @@
   .ways-grid,
   .card-grid.three,
   .card-grid.two,
-  .informed-grid {
+  .informed-grid,
+  .network-grid {
     grid-template-columns: 1fr;
   }
 

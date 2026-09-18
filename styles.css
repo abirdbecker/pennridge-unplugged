@@ -601,3 +601,34 @@ html[lang="es"] .lang-es-only {
   color: var(--text-muted);
   margin-top: -1rem;
 }
+
+/* Footer Facebook button (every page) */
+.footer-social {
+  margin-bottom: 1rem;
+}
+
+.site-footer a.footer-fb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.95rem 0.4rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.site-footer a.footer-fb:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-fb svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
