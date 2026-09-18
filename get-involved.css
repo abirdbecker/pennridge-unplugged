@@ -247,8 +247,50 @@
 }
 
 
-.network-grid {
-  margin-bottom: 3rem;
+/* Be Involved: the three cards are the main content; the Four Norms network
+   sign-up sits below them as a secondary option. */
+.involve-cards {
+  margin-bottom: 3.5rem;
+}
+
+.involve-cards .idea-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.9rem 1.75rem;
+  box-shadow: 0 6px 20px rgba(21, 44, 30, 0.08);
+}
+
+.involve-cards .idea-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.involve-cards .idea-card p {
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.card-cta {
+  margin-top: auto;
+  align-self: flex-start;
+  background: var(--forest);
+  color: var(--white);
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.card-cta:hover {
+  background: var(--forest-dark);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.network-secondary {
+  border-top: 1px solid var(--cream-dark);
+  padding-top: 3rem;
 }
 
 .network-text h3 {
