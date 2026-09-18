@@ -72,7 +72,6 @@
     'join.title': 'Únase a Pennridge Unplugged',
     'join.text': 'Cuéntenos un poco sobre usted y lo que le interesa. Le añadiremos a nuestra lista de correo para recibir novedades sobre reuniones, eventos y recursos, y le ayudaremos a conectar con familias de la escuela de su hijo.',
     'join.button': 'Inscribirse &rarr;',
-    'join.note': 'Toma unos 2 minutos. Se abre un formulario de Google (en inglés).',
     'network.title': 'Sea parte de la red estatal',
     'network.p1': 'Pennridge Unplugged es parte de PA Unplugged, una red de grupos dirigidos por padres en todo Pensilvania. Inscríbase a través de Four Norms, la plataforma que usa la red, para unirse como simpatizante de Pennridge Unplugged.',
     'network.li1': 'Reciba novedades y alertas de acción de PA Unplugged sobre políticas estatales.',

@@ -240,16 +240,12 @@
 }
 
 .join-card .btn {
-  align-self: flex-start;
+  align-self: center;
   margin-top: 0.5rem;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
 }
 
-.join-card .join-note {
-  margin: 0.9rem 0 0;
-  font-size: 0.9rem;
-}
 
 .network-grid {
   margin-bottom: 3rem;
