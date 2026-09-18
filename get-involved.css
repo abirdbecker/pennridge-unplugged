@@ -1,44 +1,188 @@
-/* Get Involved page — builds on styles.css + nav-scroll.css + resources.css */
+/* Get Involved page — builds on styles.css + nav-scroll.css + resources.css.
+   Structure: header, three numbered "ways" cards that jump to their sections,
+   then one section per way (numbered to match), then a contact band. */
 
-.involve .lead {
-  margin-bottom: 1.5rem;
+.ways .container,
+.involve .container {
+  max-width: 1040px;
 }
 
-.involve-intro,
-.involve-list {
-  max-width: 680px;
-  font-size: 1.05rem;
+/* ---------- Three ways (overlaps the header band) ---------- */
+/* Extra bottom padding on the header leaves room for the cards to overlap it. */
+.page-header {
+  padding-bottom: 5.5rem;
 }
 
-.involve-list {
-  margin: 0 0 0 1.25rem;
+.ways {
+  padding: 0 1.5rem 3.5rem;
 }
 
-.involve-list li {
-  padding-left: 0.25rem;
-  margin-bottom: 0.75rem;
+.ways-grid {
+  list-style: none;
+  margin: -2.25rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  position: relative;
 }
 
-.involve-list li:last-child {
-  margin-bottom: 0;
+.way-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-top: 4px solid var(--forest);
+  border-radius: 12px;
+  padding: 1.5rem 1.5rem 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(21, 44, 30, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.involve-list li::marker {
+.way-card:hover {
+  color: var(--text);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(21, 44, 30, 0.14);
+}
+
+.way-card h2 {
+  font-size: 1.6rem;
+  margin: 0.85rem 0 0.4rem;
+}
+
+.way-card p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.way-more {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 0.9rem;
   color: var(--forest);
 }
 
-.involve-list strong {
-  color: var(--forest-dark);
+/* Shared number badge (cards + section heads) */
+.way-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.ways-note {
+  max-width: 720px;
+  margin: 2.25rem auto 0;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* ---------- Way sections ---------- */
+.involve {
+  padding: 4.5rem 1.5rem;
+  scroll-margin-top: 7.5rem; /* clears the fixed nav when jumping from a way card */
+}
+
+.involve.alt {
+  background: var(--white);
+}
+
+.involve-head {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.involve-head .way-num {
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.75rem;
+}
+
+.involve-head h2 {
+  font-size: 2.4rem;
+  margin: 0 0 0.25rem;
+  line-height: 1.1;
+}
+
+.involve-head .lead {
+  max-width: 640px;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.involve-intro {
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+
+/* Be Informed: list beside the sign-up card */
+.informed-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 440px);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.check-list li {
+  position: relative;
+  padding: 0.9rem 0 0.9rem 2.25rem;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.check-list li:first-child {
+  padding-top: 0;
+}
+
+.check-list li:last-child {
+  border-bottom: 0;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 1.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: var(--forest)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.2l2.6 2.6L12 5.4' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / 0.8rem no-repeat;
+}
+
+.check-list li:first-child::before {
+  top: 0.3rem;
 }
 
 /* Mailing list sign-up card */
 .signup-block {
-  max-width: 520px;
-  margin-top: 2.5rem;
   background: var(--white);
   border: 1px solid var(--cream-dark);
-  border-radius: 10px;
+  border-top: 4px solid var(--forest);
+  border-radius: 12px;
   padding: 1.75rem;
+  box-shadow: 0 6px 20px rgba(21, 44, 30, 0.08);
 }
 
 .signup-block > h3 {
@@ -56,17 +200,110 @@
   background: var(--cream);
 }
 
-/* Contact */
-.involve-contact .btn {
+.signup-member {
+  margin-bottom: 0;
+}
+
+/* Idea cards (Be Involved, Take Action) */
+.card-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card-grid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.idea-card {
+  background: var(--cream);
+  border-radius: 12px;
+  border-left: 4px solid var(--forest);
+  padding: 1.4rem 1.5rem;
+}
+
+.involve:not(.alt) .idea-card {
+  background: var(--white);
+  border-top: 1px solid var(--cream-dark);
+  border-right: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.idea-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.idea-card p {
+  margin: 0;
+}
+
+/* ---------- Contact band ---------- */
+.involve-contact {
+  background: var(--forest-dark);
+  color: var(--silver-light);
+  text-align: center;
+  padding: 4.5rem 1.5rem;
+}
+
+.involve-contact h2 {
+  color: var(--white);
+  font-size: 2.4rem;
+}
+
+.involve-contact .lead {
+  max-width: 640px;
+  margin: 0 auto 1.75rem;
+  font-size: 1.1rem;
+}
+
+.btn-light {
+  background: var(--white);
+  color: var(--forest-dark);
   margin-bottom: 1rem;
+}
+
+.btn-light:hover {
+  background: var(--cream);
+  color: var(--forest-dark);
 }
 
 .involve-email {
   margin-bottom: 0;
-  color: var(--text-muted);
+  color: var(--silver);
+}
+
+.involve-email a {
+  color: var(--white);
+}
+
+@media (max-width: 860px) {
+  .ways-grid,
+  .card-grid.three,
+  .card-grid.two,
+  .informed-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ways-grid {
+    margin-top: -1.5rem;
+    gap: 1rem;
+  }
+
+  .involve-head h2,
+  .involve-contact h2 {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .involve {
+    padding: 3.25rem 1.25rem;
+  }
+
   .signup-block {
     padding: 1.25rem;
   }
