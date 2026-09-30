@@ -140,47 +140,19 @@
       <div class="network-grid network-secondary">
         <div class="network-text">
           <h3 data-i18n="network.title">Be part of the statewide network</h3>
-          <p data-i18n="network.p1">Pennridge Unplugged is part of PA Unplugged, a network of parent-led groups across Pennsylvania. Sign up through Four Norms, the platform the network uses, to join as a Pennridge Unplugged supporter.</p>
+          <p data-i18n="network.p1">Pennridge Unplugged is part of PA Unplugged, a network of parent-led groups across Pennsylvania. Become a member on Four Norms, the platform the network uses, to join Pennridge Unplugged there.</p>
           <ul class="check-list">
             <li data-i18n="network.li1">Get PA Unplugged updates and action alerts on state policy.</li>
             <li data-i18n="network.li2">Find and RSVP to events in Pennridge and across the state.</li>
             <li data-i18n="network.li3">Add your voice to advocacy for healthier technology use in schools.</li>
           </ul>
         </div>
-      <!-- Adds a supporter to Pennridge Unplugged on Four Norms via /api/join (site.js).
-           Four Norms supporters sync into the PA Unplugged Mailchimp list. -->
-      <div class="signup-block" id="signup">
+      <!-- Membership happens on Four Norms. We no longer add supporters from
+           this site: supporters came through without usable location data. -->
+      <div class="signup-block member-card" id="signup">
         <h3 data-i18n="signup.title">Join the PA Unplugged network</h3>
-
-        <form class="signup-form" id="signup-form">
-          <div class="signup-row">
-            <div>
-              <label class="sr-only" for="first_name" data-i18n="form.first">First name</label>
-              <input id="first_name" name="first_name" required autocomplete="given-name" placeholder="First name" data-i18n-placeholder="form.first">
-            </div>
-            <div>
-              <label class="sr-only" for="last_name" data-i18n="form.last">Last name</label>
-              <input id="last_name" name="last_name" required autocomplete="family-name" placeholder="Last name" data-i18n-placeholder="form.last">
-            </div>
-          </div>
-          <label class="sr-only" for="email" data-i18n="form.email">Email</label>
-          <input id="email" name="email" type="email" required autocomplete="email" placeholder="Email address" data-i18n-placeholder="form.email">
-          <label class="sr-only" for="zip" data-i18n="form.zip">ZIP code</label>
-          <input id="zip" name="zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="ZIP code" data-i18n-placeholder="form.zip">
-          <div class="signup-hp" aria-hidden="true">
-            <label for="company">Company</label>
-            <input id="company" name="company" tabindex="-1" autocomplete="off">
-          </div>
-          <p class="signup-error" role="alert" hidden></p>
-          <button type="submit" class="btn btn-primary" data-i18n="form.submit">Sign Up</button>
-        </form>
-
-        <div class="signup-success" id="signup-success" tabindex="-1" hidden>
-          <h3>You're on the list.</h3>
-          <p></p>
-        </div>
-
-        <p class="signup-member" data-i18n="signup.member">Want to help lead the work? <a href="https://www.fournorms.com/pa-unplugged/pennridge-unplugged" target="_blank" rel="noopener">Become a member on Four Norms</a>.</p>
+        <p data-i18n="signup.text">Become a member of Pennridge Unplugged on Four Norms to get updates, RSVP to events, and help lead the work.</p>
+        <a class="btn btn-primary" href="https://www.fournorms.com/pa-unplugged/pennridge-unplugged" target="_blank" rel="noopener" data-i18n="signup.button">Become a member &rarr;</a>
       </div>
       </div>
     </div>

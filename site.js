@@ -1,28 +1,13 @@
-// Four Norms features, used on any page that has the matching markup:
-// the sign-up form (#signup-form, posts to /api/join) and the upcoming events
-// list (#events, reads /api/events). Strings follow the language toggle (i18n.js).
+// Four Norms upcoming events list (#events, reads /api/events), used on any
+// page that has the matching markup. Strings follow the language toggle (i18n.js).
 
 (function () {
   const STRINGS = {
     en: {
-      signingUp: 'Signing up…',
-      signUp: 'Sign Up',
-      genericError: "We couldn't complete your sign-up. Please try again.",
-      successTitle: "You're on the list.",
-      successBody: "We'll keep you posted on local events, meetings, and ways to get involved.",
-      alreadyTitle: "You're already on the list.",
-      alreadyBody: 'That email is already signed up for updates from Pennridge Unplugged.',
       eventsEmpty: 'No upcoming events are posted right now. Join the mailing list to hear about the next one.',
       details: 'Details & RSVP →',
     },
     es: {
-      signingUp: 'Inscribiendo…',
-      signUp: 'Inscribirse',
-      genericError: 'No pudimos completar su inscripción. Inténtelo de nuevo.',
-      successTitle: 'Ya está en la lista.',
-      successBody: 'Le mantendremos al tanto de eventos locales, reuniones y formas de participar.',
-      alreadyTitle: 'Ya estaba en la lista.',
-      alreadyBody: 'Ese correo ya está inscrito para recibir novedades de Pennridge Unplugged.',
       eventsEmpty: 'Por ahora no hay próximos eventos publicados. Únase a la lista de correo para enterarse del próximo.',
       details: 'Detalles y confirmación →',
     },
@@ -30,48 +15,6 @@
 
   const lang = () => (window.siteLang ? window.siteLang.get() : 'en');
   const t = (key) => STRINGS[lang()][key];
-
-  // ---------- Sign-up ----------
-  const form = document.getElementById('signup-form');
-  if (form) {
-    const success = document.getElementById('signup-success');
-    const errorEl = form.querySelector('.signup-error');
-    const button = form.querySelector('button[type="submit"]');
-
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      errorEl.hidden = true;
-      button.disabled = true;
-      button.textContent = t('signingUp');
-
-      let result = null;
-      try {
-        const res = await fetch('/api/join', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...Object.fromEntries(new FormData(form)), lang: lang() }),
-        });
-        result = await res.json();
-      } catch {
-        result = null;
-      }
-
-      button.disabled = false;
-      button.textContent = t('signUp');
-
-      if (!result || !result.ok) {
-        errorEl.textContent = (result && result.error) || t('genericError');
-        errorEl.hidden = false;
-        return;
-      }
-
-      success.querySelector('h3').textContent = t(result.already ? 'alreadyTitle' : 'successTitle');
-      success.querySelector('p').textContent = t(result.already ? 'alreadyBody' : 'successBody');
-      form.hidden = true;
-      success.hidden = false;
-      success.focus();
-    });
-  }
 
   // ---------- Upcoming events ----------
   const section = document.getElementById('events');

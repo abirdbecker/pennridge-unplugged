@@ -201,22 +201,13 @@
   font-size: 1.3rem;
 }
 
-.signup-block .signup-form,
-.signup-block .signup-success {
-  max-width: none;
-  margin: 1.25rem 0 1rem;
-}
-
-.signup-block .signup-success {
-  background: var(--cream);
-}
-
-.signup-member {
-  margin-bottom: 0;
+.member-card p {
+  color: var(--text-muted);
+  margin: 0.75rem 0 1.25rem;
 }
 
 /* The join card is Pennridge's primary sign-up, so it matches the height of
-   the list beside it and gets larger type than the Four Norms form card. */
+   the list beside it and gets larger type than the Four Norms member card. */
 .informed-grid {
   grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
   align-items: stretch;
